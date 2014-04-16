@@ -27,6 +27,7 @@ namespace SnakesOnAGame
         Vector2 location = new Vector2(1, 1);
         float snakeMovementTimer = 0f;
         float snakeMovementTime = 60f; // ms between snake updates
+        int playerScore = 0;
        
         public Game1()
         {
@@ -145,7 +146,9 @@ namespace SnakesOnAGame
                     pellet.X = rand.Next(10, 30);
                     pellet.Y = rand.Next(10, 30);
                     snake.Add( new Vector2(snake[0].X, snake[0].Y));
-                    
+                    playerScore++;
+                    this.Window.Title = "Score : " + playerScore.ToString();
+
                 }
 
                 base.Update(gameTime);
